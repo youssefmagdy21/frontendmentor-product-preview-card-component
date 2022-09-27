@@ -158,17 +158,19 @@ p {
     opacity: 0.9;
     transform: scale(105%);
   } */
+
   .product-card-img {
     min-height: 100%;
-    flex: 1;
+    /* flex: 1; */
     border-top-right-radius: 0px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
   }
   .product-card-info {
+    max-width: 50%;
     justify-content: space-between;
-    padding: 1.5625rem;
-    flex: 1;
+    padding: 1.625rem;
+    /* flex: 1; */
     gap: 0;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 0px;
