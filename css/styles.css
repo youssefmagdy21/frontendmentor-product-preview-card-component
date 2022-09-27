@@ -1,19 +1,20 @@
 /* -----------------------------page general styles--------------------------- */
 
 html {
-  box-sizing: border-box;
   font-size: 100%;
+  width: 100%;
   height: 100%;
 }
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
 body {
   margin: 0;
   padding: 0;
+  width: inherit;
   height: inherit;
   background-color: hsl(30, 38%, 92%);
 }
@@ -35,16 +36,20 @@ p {
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 100vh;
+  height: 95%;
 }
 .product-card {
   display: flex;
   flex-direction: column;
-  max-width: 18em;
+  max-width: 18rem;
   border-radius: 8px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
 }
+
+/* to do>>> fill that gap >> DONE */
 .product-card-img {
+  display: block;
+  max-width: 100%;
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
 }
@@ -102,7 +107,6 @@ p {
   border: none;
   background-color: hsl(158, 36%, 37%);
   color: white;
-  text-decoration: none;
   font-weight: bold;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   transition: ease 0.5s;
@@ -113,13 +117,22 @@ p {
 .add-to-cart-btn:hover,
 .add-to-cart-btn:active {
   background-color: hsl(158, 34%, 15%);
+  cursor: pointer;
 }
 
 /* -----------------------------footer styles--------------------------- */
 
 .attribution {
+  font-size: 0.7rem;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
   background-color: white;
-  padding: 0.938rem;
+  min-height: fit-content;
+  /* height: 5%; */
+  padding: 0.125rem 0.0625rem;
+  text-align: center;
 }
 .attribution a {
   text-decoration: none;
@@ -131,22 +144,22 @@ p {
 
 /* -----------------------------media quiries--------------------------- */
 
-@media (min-width: 34.0625rem) {
+@media only screen and (min-width: 768px) {
+  /* for desktop */
   .product-card {
     display: flex;
     flex-direction: row;
-    max-width: 32.1875em;
-    height: 50vh;
+    max-width: 32.1875rem;
     border-radius: 8px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-    transition: ease 0.7s;
+    /* transition: ease 0.7s; */
   }
-  .product-card:hover {
+  /* .product-card:hover {
     opacity: 0.9;
     transform: scale(105%);
-  }
+  } */
   .product-card-img {
-    content: url("../images/image-product-desktop.jpg");
+    min-height: 100%;
     flex: 1;
     border-top-right-radius: 0px;
     border-top-left-radius: 8px;
@@ -160,5 +173,10 @@ p {
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 0px;
     border-top-right-radius: 8px;
+  }
+  .attribution {
+    font-size: 1rem;
+    min-height: 5%;
+    padding: 0.5rem 0rem;
   }
 }
